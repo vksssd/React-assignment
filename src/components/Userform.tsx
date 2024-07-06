@@ -20,7 +20,49 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
     
     return (
         <Box component = "form" onSubmit={handleSubmit} sx={{mt: 1}}>
-
-            <Box/>
+            <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="name"
+                label="Name"
+                name="name"
+                autoFocus
+                value={user.name}
+                onChange={handleChange}
+            />
+            <TextField
+                margin="normal"
+                required
+                fullWidth
+                autoFocus
+                id="phoneNumber"
+                label="Phone Number"
+                name="phoneNumber"
+                value={user.phoneNumber}
+                onChange={handleChange}
+            />
+            <TextField
+                margin="normal"
+                required
+                fullWidth
+                autoFocus
+                id="email"
+                label="Email"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+            />
+            <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+            >
+                Submit
+            </Button>
+        </Box>
     )
 }
+
+export default UserForm;
